@@ -30,7 +30,7 @@
         var Na = (t,e,r,o)=>{
                 if (e && typeof e == "object" || typeof e == "function")
                     for (let n of ba(e))
-                        !Ma.c(t, n) && n !== r && Rr(t, n, {
+                        !Ma.call(t, n) && n !== r && Rr(t, n, {
                             get: ()=>e[n],
                             enumerable: !(o = wa(e, n)) || o.enumerable
                         });
