@@ -7366,7 +7366,7 @@
                         m.attr("height", l),
                         m.selectAll("*").remove();
                     let H = Ht().domain(Rt(_.map(T=>+T.local_authority_poverty_rate)).map((T,yt)=>T ? yt === 0 ? T * .7 : T * 1.2 : 0)).range([a.left, i - a.right])
-                        , p = ie().domain(o ? b.length ? b : ["No regions"] : ["By nation"]).range([l - a.bottom, a.top])
+                        , p = ie().domain(o ? b.length ? b : ["No regions"] : ["All"]).range([l - a.bottom, a.top])
                         , w = Je(H)
                         , x = je(p);
                     m.append("g").attr("class", "x-axis").attr("transform", `translate(0, ${l - a.bottom})`).call(w),
@@ -7375,13 +7375,13 @@
                         m.selectAll(".y-axis .tick line").attr("x2", `${i - a.right - a.left}`).attr("stroke", Dt.line),
                         m.selectAll(".domain").attr("stroke", Dt.line);
                     let y = Ht().domain(Rt(_, T=>+T.address_count)).range(se() ? [1, 15] : [2, 20]);
-                    m.selectAll(".circ").data(_).enter().append("circle").attr("class", "circ").attr("fill", T=>Dt.regions[T.region]).attr("r", T=>y(T.address_count)).attr("cx", T=>H(T.local_authority_poverty_rate)).attr("cy", T=>p(o ? T.region : "By nation")).on("mouseover", W).on("mousemove", T=>{
+                    m.selectAll(".circ").data(_).enter().append("circle").attr("class", "circ").attr("fill", T=>Dt.regions[T.region]).attr("r", T=>y(T.address_count)).attr("cx", T=>H(T.local_authority_poverty_rate)).attr("cy", T=>p(o ? T.region : "All")).on("mouseover", W).on("mousemove", T=>{
                             let {clientX: yt, clientY: gt} = T;
                             f.style.left = yt + "px",
                                 f.style.top = gt + 10 + "px"
                         }
                     ).on("mouseleave", C);
-                    let M = yr(_).force("x", gr(T=>H(T.local_authority_poverty_rate))).force("y", vr(T=>p(o ? T.region : "By nation") + p.bandwidth() / 2)).force("collide", pr(T=>y(T.address_count) + (se() ? .75 : 1.5))).on("tick", R);
+                    let M = yr(_).force("x", gr(T=>H(T.local_authority_poverty_rate))).force("y", vr(T=>p(o ? T.region : "All") + p.bandwidth() / 2)).force("collide", pr(T=>y(T.address_count) + (se() ? .75 : 1.5))).on("tick", R);
                     function z() {
                         let T = document.createElement("div");
                         T.textContent = "Fuel poverty rate (%, Local authority-level)",
