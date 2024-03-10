@@ -7042,7 +7042,8 @@
                                     k(!1);
                                     break;
                                 default:
-                                    break
+                                        "By region":
+                                    k(!0);
                             }
                         }
                     ),
