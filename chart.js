@@ -7034,6 +7034,8 @@
                     let g = t.querySelector(A["chart-toggle"]);
                     g && q(g, "change", ()=>{
                             var w;
+                            console.log(g)
+                            console.log(g.firstChild)
                             console.log((w = g.firstChild) == null ? void 0 : w.textContent);
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
