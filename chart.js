@@ -7035,6 +7035,7 @@
                     g && q(g, "change", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent) {
+                                            console.log("git", g.firstChild);
                                 case "By region":
                                     k(!0);
                                     break;
@@ -7042,9 +7043,7 @@
                                     k(!1);
                                     break;
                                 default:
-                                        "By region":
-                                                k(!0);
-                                            break;
+                                        break;
                             }
                         }
                     ),
