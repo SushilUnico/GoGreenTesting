@@ -7034,8 +7034,8 @@
                     let g = t.querySelector(A["chart-toggle"]);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent) {
-                                            console.log("git", g.firstChild);
+                            console.log(g.firstChild);
+                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
                                     k(!0);
                                     break;
