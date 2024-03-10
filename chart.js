@@ -7036,16 +7036,15 @@
                             var w;
                             console.log(g)
                             console.log(g.firstChild)
-                            console.log((w = g.firstChild) == null ? void 0 : w.textContent);
+                            console.log((w = g.firstChild) != null ? void 0 : w.textContent);
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
+                                default:
                                 case "By region":
                                     k(!0);
                                     break;
                                 case "By nation":
                                     k(!1);
                                     break;
-                                default:
-                                        break;
                             }
                         }
                     ),
