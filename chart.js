@@ -7043,7 +7043,8 @@
                                     break;
                                 default:
                                         "By region":
-                                    k(!0);
+                                                k(!0);
+                                            break;
                             }
                         }
                     ),
