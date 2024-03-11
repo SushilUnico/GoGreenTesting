@@ -6769,9 +6769,9 @@
                 }
                 let f = (()=>{
                         let g = document.createElement("div");
-                        window.onload = (event) => {
-                                g.style.opacity = "0"
-};
+                       window.addEventListener("load", (event) => {
+                               g.style.opacity = "0";
+});
                        
                         g.style.position = "fixed",
                             g.style.pointerEvents = "none",
