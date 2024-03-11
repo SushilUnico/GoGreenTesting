@@ -6771,8 +6771,10 @@
                         let g = document.createElement("div");
                        window.addEventListener("load", (event) => {
                                g.style.opacity = "0";
-});
-                       
+                       });   
+                            window.addEventListener("change", (event) => {
+                               g.style.opacity = "1";
+                       });  
                         g.style.position = "fixed",
                             g.style.pointerEvents = "none",
                             g.style.left = "200px",
