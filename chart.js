@@ -7041,7 +7041,7 @@
                         console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : "By region"){
+                            switch ("By region"){
                                 case "By region":
                                     k(!0);
                                     break;
