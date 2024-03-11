@@ -7037,36 +7037,24 @@
                     }
                     , 5e3);
                 function F() {
-                    // let g = t.querySelector(A["chart-toggle"]);
-                    // g && q(g, "change", ()=>{
-                    //         // var w;
-                    //         // switch ((w = g.firstChild) == null ? void 0 : w.textContent){
-                    //         //     case "By region":
-                    //         //         k(!0);
-                    //         //         break;
-                    //         //     case "By nation":
-                    //         //         k(!1);
-                    //         //         break;
-                    //         //     default:
-                    //         //             break;
+                    let g = t.querySelector(A["chart-toggle"]);
+                    g && q(g, "change", ()=>{
+                            var w;
+                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
+                                case "By region":
+                                    k(!0);
+                                    break;
+                                case "By nation":
+                                    k(!1);
+                                    break;
+                                default:
+                                        k(!0);
+                                        break;
                                         
-                    //         // }
-                    //           k(!0);
-                    //     }
-                    // ),
-                        let g = t.querySelector(A["chart-toggle"]);
-    let isByRegion = false; // Initial state
-
-    // Function to toggle the state
-    function toggleState() {
-        isByRegion = !isByRegion;
-        k(isByRegion);
-    }
-
-    g && q(g, "change", () => {
-        // Toggle the state on each change
-        toggleState();
-    });
+                            }
+                        }
+                    ),
+                        
                         document.addEventListener("visibilitychange", function() {
                             document.visibilityState === "visible" && I()
                         }),
