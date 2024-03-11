@@ -7041,7 +7041,7 @@
                         console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
+                            switch ((w = g.firstChild) == null ? void 0 : w.textContent == "By region"){
                                 case "By region":
                                     k(!0);
                                     break;
@@ -7049,6 +7049,7 @@
                                     k(!1);
                                     break;
                                 default:
+                                        k(!0);
                                         break;
                                         
                             }
