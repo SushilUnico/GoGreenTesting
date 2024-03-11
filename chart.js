@@ -7042,16 +7042,15 @@
                     g && q(g, "change", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent == "By region"){
+                         default:
+                                      
+                                        break;
                                 case "By region":
                                     k(!0);
                                     break;
                                 case "By nation":
                                     k(!1);
-                                    break;
-                                default "By region":
-                                        k(!0);
-                                        break;
-                                        
+                                    break;          
                             }
                         }
                     ),
