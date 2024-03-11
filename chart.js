@@ -6769,10 +6769,10 @@
                 }
                 let f = (()=>{
                         let g = document.createElement("div");
-                       body.addEventListener("load", (event) => {
+                       window.addEventListener("load", (event) => {
                                g.style.opacity = "0";
                        });   
-                            body.addEventListener("change", (event) => {
+                            window.addEventListener("change", (event) => {
                                g.style.opacity = "1";
                        });  
                         g.style.position = "fixed",
@@ -6788,7 +6788,7 @@
                             g.style.borderRadius = "12px",
                             g.style.transition = "opacity",
                             g.style.transform = "translateX(-50%)",
-                            // g.style.opacity = "1";
+                            g.style.opacity = "1";
                         let _ = document.createElement("p");
                         _.setAttribute("id", "tooltip-title"),
                             _.style.fontWeight = "bold",
@@ -7041,16 +7041,16 @@
                         console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
-                       
+                            switch ((w = g.firstChild) == null ? void 0 : w.textContent == "By region"){
+                         default:
+                                      
+                                        break;
                                 case "By region":
                                     k(!0);
                                     break;
                                 case "By nation":
                                     k(!1);
-                                    break;      
-                                default:
-                                        break;
+                                    break;          
                             }
                         }
                     ),
