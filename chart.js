@@ -6774,6 +6774,7 @@
                                g.style.opacity = "0";
                        });   
                             vi.addEventListener("change", (event) => {
+                                    console.log("change");
                                g.style.opacity = "1";
                        });  
                         g.style.position = "fixed",
