@@ -7048,7 +7048,7 @@
                                 case "By nation":
                                     k(!1);
                                     break;
-                                default:
+                                default "By region":
                                         k(!0);
                                         break;
                                         
