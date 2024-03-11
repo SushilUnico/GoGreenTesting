@@ -6769,11 +6769,11 @@
                 }
                 let f = (()=>{
                         let g = document.createElement("div");
-                        let v = t.querySelector('[data-chart-element="search"]')
-                       v.addEventListener("load", (event) => {
+                        let ser = t.querySelector('[data-chart-element="search"]')
+                       ser.addEventListener("load", (event) => {
                                g.style.opacity = "0";
                        });   
-                            v.addEventListener("change", (event) => {
+                            ser.addEventListener("change", (event) => {
                                g.style.opacity = "1";
                        });  
                         g.style.position = "fixed",
