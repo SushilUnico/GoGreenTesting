@@ -7041,12 +7041,12 @@
                         console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
+                            switch ((w = g.firstChild) == null ? void 0 : "By region"){
                                 case "By region":
-                                    k(!1);
+                                    k(!0);
                                     break;
                                 case "By nation":
-                                    k(!0);
+                                    k(!1);
                                     break;
                                 default:
                                         break;
