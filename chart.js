@@ -7038,7 +7038,7 @@
                     , 5e3);
                 function F() {
                     let g = t.querySelector(A["chart-toggle"]);
-                    g && q(g, "change", ()=>{
+                    g && q(g, "load", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
@@ -7048,7 +7048,6 @@
                                     k(!1);
                                     break;
                                 default:
-                                        k(!0);
                                         break;
                                         
                             }
