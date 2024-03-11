@@ -6770,7 +6770,7 @@
                 let f = (()=>{
                         let g = document.createElement("div");
                         let vi = document.querySelector('[data-chart-element="search"]')
-                       vi.addEventListener("load", (event) => {
+                       window.addEventListener("load", (event) => {
                                 console.log("change");
                                g.style.opacity = "0";
                        });   
