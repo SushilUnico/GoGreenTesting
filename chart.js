@@ -7043,10 +7043,10 @@
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
-                                    k(!0);
+                                    k(!1);
                                     break;
                                 case "By nation":
-                                    k(!1);
+                                    k(!0);
                                     break;
                                 default:
                                         break;
