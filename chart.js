@@ -6769,7 +6769,7 @@
                 }
                 let f = (()=>{
                         let g = document.createElement("div");
-                        window.onload(g.style.opacity = "0)";
+                        window.onload(g.style.opacity = "0");
                         g.style.position = "fixed",
                             g.style.pointerEvents = "none",
                             g.style.left = "200px",
