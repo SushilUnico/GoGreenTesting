@@ -6769,6 +6769,7 @@
                 }
                 let f = (()=>{
                         let g = document.createElement("div");
+                        window.onload(g.style.opacity = "0)";
                         g.style.position = "fixed",
                             g.style.pointerEvents = "none",
                             g.style.left = "200px",
@@ -6782,7 +6783,7 @@
                             g.style.borderRadius = "12px",
                             g.style.transition = "opacity",
                             g.style.transform = "translateX(-50%)",
-                            g.style.opacity = "0";
+                            g.style.opacity = "1";
                         let _ = document.createElement("p");
                         _.setAttribute("id", "tooltip-title"),
                             _.style.fontWeight = "bold",
