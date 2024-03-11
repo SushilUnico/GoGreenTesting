@@ -7041,16 +7041,15 @@
                         console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent == "By region"){
-                         default:
-                                      
-                                        break;
+                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
                                     k(!0);
                                     break;
                                 case "By nation":
                                     k(!1);
-                                    break;          
+                                    break;      
+                                default:
+                                        break;
                             }
                         }
                     ),
