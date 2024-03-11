@@ -7039,22 +7039,19 @@
                 function F() {
                     let g = t.querySelector(A["chart-toggle"]);
                     g && q(g, "change", ()=>{
-                            var w;
-                            console.log(g)
-                            console.log(g.firstChild)
-                            console.log((w = g.firstChild) != null ? void 0 : w.textContent);
-                            switch ((w = g.firstChild) == null ? void 0 : w.textContent){
-
-                                case "By region":
-                                    k(!0);
-                                    break;
-                                case "By nation":
-                                    k(!1);
-                                    break;
-                                default:
-                                        break;
+                            // var w;
+                            // switch ((w = g.firstChild) == null ? void 0 : w.textContent){
+                            //     case "By region":
+                            //         k(!0);
+                            //         break;
+                            //     case "By nation":
+                            //         k(!1);
+                            //         break;
+                            //     default:
+                            //             break;
                                         
-                            }
+                            // }
+                              k(!0);
                         }
                     ),
                         document.addEventListener("visibilitychange", function() {
