@@ -6770,9 +6770,6 @@
                 let f = (()=>{
                         let g = document.createElement("div");
                         let vi = document.querySelector('[data-chart-element="search"]')
-                       // window.addEventListener("load", (event) => {
-                       //         g.style.opacity = "0";
-                       // });   
                             vi.addEventListener("change", (event) => 
                                g.style.opacity = "1";
                        });  
