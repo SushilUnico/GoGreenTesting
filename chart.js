@@ -6771,7 +6771,6 @@
                         let g = document.createElement("div");
                         let vi = document.querySelector('[data-chart-element="search"]')
                        window.addEventListener("load", (event) => {
-                                console.log("change");
                                g.style.opacity = "0";
                        });   
                             vi.addEventListener("change", (event) => {
@@ -6791,7 +6790,7 @@
                             g.style.borderRadius = "12px",
                             g.style.transition = "opacity",
                             g.style.transform = "translateX(-50%)",
-                            // g.style.opacity = "1";
+                            g.style.opacity = "1";
                         let _ = document.createElement("p");
                         _.setAttribute("id", "tooltip-title"),
                             _.style.fontWeight = "bold",
