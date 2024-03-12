@@ -6790,7 +6790,6 @@
                             g.style.borderRadius = "12px",
                             g.style.transition = "opacity",
                             g.style.transform = "translateX(-50%)",
-                            g.style.opacity = "1";
                         let _ = document.createElement("p");
                         _.setAttribute("id", "tooltip-title"),
                             _.style.fontWeight = "bold",
