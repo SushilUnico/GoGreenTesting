@@ -6770,7 +6770,10 @@
                 let f = (()=>{
                         let g = document.createElement("div");
                         let vi = document.querySelector('[data-chart-element="search"]') 
-                        window.onscroll(event) => {g.style.opacity = "0";};
+                        // window.onscroll(event) => {g.style.opacity = "0";};
+                        window.addEventListener("scroll", (event) => {
+                               g.style.opacity = "0";
+                        });  
                         vi.addEventListener("change", (event) => {
                                g.style.opacity = "1";
                         });  
