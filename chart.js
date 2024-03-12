@@ -6770,6 +6770,9 @@
                 let f = (()=>{
                         let g = document.createElement("div");
                         let vi = document.querySelector('[data-chart-element="search"]')
+                                                    window.addEventListener("load", (event) => 
+                               g.style.opacity = "1";
+                       });  
                             vi.addEventListener("change", (event) => 
                                g.style.opacity = "1";
                        });  
@@ -6794,7 +6797,7 @@
                             _.textContent = "Birmingham";
                         let v = document.createElement("ul");
                         return v.style.fontSize = "14px",
-                            v.style.marginTop = "1px",
+                            v.style.marginTop = "3px",
                             v.style.paddingLeft = "0px",
                             v.style.whiteSpace = "nowrap",
                             [{
