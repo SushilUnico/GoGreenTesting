@@ -6773,7 +6773,7 @@
                         vi.addEventListener("change", (event) => {
                                g.style.opacity = "1";
                         });  
-                        g.style.position = "fixed",
+                        g.style.position = "sticky",
                             g.style.pointerEvents = "none",
                             g.style.left = "200px",
                             g.style.top = "200px",
