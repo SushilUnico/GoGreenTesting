@@ -4873,7 +4873,7 @@
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${Fr}`
                         },
-                       body: Wized.data.v.filtersUpdated ? JSON.stringify(payload) : JSON.stringify({})
+                       body: Wized.data.v.filtersUpdated == true ? JSON.stringify(payload) : JSON.stringify({})
                     })).json()
             }
         };
