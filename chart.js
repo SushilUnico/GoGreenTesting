@@ -4689,7 +4689,7 @@
             async locationData() {
                 return "locationData"
             },
-            async findAddressCount(t, mode = 'reset') {
+            async findAddressCount(t, mode = 'apply') {
                 t || (t = ze().value);
                 let e = ga.filter(n=>t.Regions.includes(n.region_name))
                     , r = (t.LocalAuthorityLabels || []).filter(n=>e.map(a=>a.name).includes(n));
