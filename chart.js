@@ -7037,7 +7037,7 @@
                                 "Authorization": `Bearer ${Fr}`
                             },
                             body: JSON.stringify({})
-                        })).json()
+                        }).json()
                                 console.log("This is been clicked")
                         } else {
                             // document.querySelector('.filters_submit-button').click(); // TODO: instead of triggering click event listen an event from wized that filters are loaded
