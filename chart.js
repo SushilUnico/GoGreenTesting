@@ -7032,7 +7032,7 @@
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
                                 console.log("This is been clicked")
                         } else {
-                            document.querySelector('.filters_submit-button').click(); // TODO: instead of triggering click event listen an event from wized that filters are loaded
+                            // document.querySelector('.filters_submit-button').click(); // TODO: instead of triggering click event listen an event from wized that filters are loaded
                             q(document.querySelector('a[wized="chart_section_toggle"]'), "click", (e)=>{
                                 I();
                             });
