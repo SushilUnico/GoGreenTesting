@@ -7029,7 +7029,7 @@
                         console.log("Chart file loaded: calling API's now");
                         if(window.location.pathname == '/' || window.location.pathname == "/profile-creation") {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
-                                await fetch(`${Br}/table`, {
+                        fetch(`${Br}/table`, {
                             method: "POST",
                             headers: {
                                 Accept: "application/json",
