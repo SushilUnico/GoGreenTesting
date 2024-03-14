@@ -7037,7 +7037,16 @@
         "Authorization": `Bearer ${Fr}`
     },
     body: JSON.stringify({})
-}).then(
+})
+                                        .then(response => {
+    // Check if the response is successful
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    // Parse the JSON response
+    return response.json();
+})
+                                        .then(
                                         data => {
     // Handle the JSON data
     console.log(data); // Or do whatever you need with the response data
