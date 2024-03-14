@@ -7028,7 +7028,7 @@
                 setTimeout(()=>{
                         F()
                         console.log("Chart file loaded: calling API's now");
-                        if(window.location.pathname == '/') {
+                        if(window.location.pathname == '/' || window.location.pathname == "/profile-creation") {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
                                 console.log("This is been clicked")
                         } else {
