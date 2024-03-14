@@ -7049,7 +7049,8 @@
                                         .then(
                                         data => {
     // Handle the JSON data
-    console.log(data); // Or do whatever you need with the response data
+                                                Wized.data.v.profile_household_demo = data
+    console.log( Wized.data.v.profile_household_demo); // Or do whatever you need with the response data
 }
 )
                                 console.log("This is been clicked")
