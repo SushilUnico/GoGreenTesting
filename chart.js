@@ -4864,7 +4864,6 @@
                     },
                     body: JSON.stringify(payload)
                 })*/
-                console.log(Wized.data.v.filtersUpdated)
                 return t.LocalAuthorityLabels = r,
                     (await fetch(`${Br}/chart`, {
                         method: "POST",
@@ -4873,7 +4872,7 @@
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${Fr}`
                         },
-                       body: Wized.data.v.filtersUpdated == true ? JSON.stringify(payload) : JSON.stringify({})
+                       body: JSON.stringify(payload)
                     })).json()
             }
         };
