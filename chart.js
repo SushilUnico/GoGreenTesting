@@ -3275,7 +3275,36 @@
                     , d = h.align
                     , E = h.sign
                     , m = h.symbol
-                    , b = h.zero
+                    , b = h.zero document.addEventListener("DOMContentLoaded", function() {
+      const addressCountContainer = document.getElementById("addressCountContainer");
+      const updateButton = document.getElementById("updateButton");
+
+      // Function to fetch initial address count from the first API
+      function fetchInitialAddressCount() {
+        // Make your API call here
+        // Example: fetch('first_api_url').then(response => response.json()).then(data => {
+        const initialAddressCount = 10; // Example value
+        addressCountContainer.textContent = `Address count: ${initialAddressCount}`;
+        // });
+      }
+
+      // Function to fetch updated address count from the second API
+      function fetchUpdatedAddressCount() {
+        // Make your API call here
+        // Example: fetch('second_api_url').then(response => response.json()).then(data => {
+        const updatedAddressCount = 20; // Example value
+        addressCountContainer.textContent = `Address count: ${updatedAddressCount}`;
+        // });
+      }
+
+      // Initial fetch when the page loads
+      fetchInitialAddressCount();
+
+      // Event listener for the button click to update the address count
+      updateButton.addEventListener("click", function() {
+        fetchUpdatedAddressCount();
+      });
+    });
                     , S = h.width
                     , W = h.comma
                     , C = h.precision
@@ -7028,7 +7057,7 @@
                 setTimeout(()=>{
                         F()
                         console.log("Chart file loaded: calling API's now");
-                        if(window.location.pathname !== '/profile-creation') {
+                        if(window.location.pathname == '/') {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
                                 console.log("This is been clicked")
                         } else {
