@@ -4713,16 +4713,16 @@
                 let payload = {};
                 if (t.LocalAuthorityLabels.length === 296 || !t.LocalAuthorityLabels.length) {
                     payload['la_select_status'] = false;
-                    payload['local_authority_label'] = null;
+                    payload['local_authority_name'] = null;
                 } else {
                     payload['la_select_status'] = true;
-                    payload['local_authority_label'] = t.LocalAuthorityLabels;
+                    payload['local_authority_name'] = t.LocalAuthorityLabels;
                 }
 
                 if (last_applied_filter) {
                     if (!compare_arrays('LocalAuthorityLabels', last_applied_filter, t)) {
                         payload['la_select_status'] = false;
-                        delete payload['local_authority_label'];
+                        delete payload['local_authority_name'];
                     }
                 }
 
@@ -4733,10 +4733,10 @@
                                 payload['region'] = (!t[key] || t[key].length == 0) ? null : t[key];
                                 if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
                                     payload['la_select_status'] = false;
-                                    payload['local_authority_label'] = null;
+                                    payload['local_authority_name'] = null;
                                 } else {
                                     payload['la_select_status'] = true;
-                                    payload['local_authority_label'] = t.LocalAuthorityLabels;
+                                    payload['local_authority_name'] = t.LocalAuthorityLabels;
                                 }
                             }
                             break;
@@ -7111,13 +7111,13 @@
                         }
                     ;
                     return [q(t.querySelector(A["filters-reset-button"]), "click", async()=>{
-                        // if(window.location.pathname !== '/profile-creation') {
-                        //         console.log("reset")
-                        //     await NN('reset');
-                        // } else {
-                        //         console.log("apply")
-                        //     await NN('apply');
-                        // }
+                        if(window.location.pathname !== '/profile-creation') {
+                                console.log("reset")
+                            await NN('reset');
+                        } else {
+                                console.log("apply")
+                            await NN('apply');
+                        }
                     }
                     ),q(t.querySelector(A["filters-submit-button"]), "click", async()=>{
                         // Set Region
