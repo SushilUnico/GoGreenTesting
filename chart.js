@@ -4854,7 +4854,7 @@
                 });
                 last_applied_filter = JSON.parse(JSON.stringify(t));
                 console.log('====== CHART API PAYLOAD APPLY ======');
-                console.log(payload);
+                console.log(last_applied_filter);
                 /*fetch(`${Audr}/address_match`, {
                     method: "POST",
                     headers: {
