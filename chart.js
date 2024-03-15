@@ -4872,7 +4872,8 @@
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${Fr}`
                         },
-                       body: JSON.stringify(payload)
+                       body: JSON.stringify(last_applied_filter)
+                       // body: JSON.stringify(payload)
                     })).json()
             }
         };
