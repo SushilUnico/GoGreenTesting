@@ -7111,13 +7111,13 @@
                         }
                     ;
                     return [q(t.querySelector(A["filters-reset-button"]), "click", async()=>{
-                        if(window.location.pathname !== '/profile-creation') {
-                                console.log("reset")
-                            await NN('reset');
-                        } else {
-                                console.log("apply")
-                            await NN('apply');
-                        }
+                        // if(window.location.pathname !== '/profile-creation') {
+                        //         console.log("reset")
+                        //     await NN('reset');
+                        // } else {
+                        //         console.log("apply")
+                        //     await NN('apply');
+                        // }
                     }
                     ),q(t.querySelector(A["filters-submit-button"]), "click", async()=>{
                         // Set Region
