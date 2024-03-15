@@ -7112,8 +7112,10 @@
                     ;
                     return [q(t.querySelector(A["filters-reset-button"]), "click", async()=>{
                         if(window.location.pathname !== '/profile-creation') {
+                                console.log("reset")
                             await NN('reset');
                         } else {
+                                console.log("apply")
                             await NN('apply');
                         }
                     }
