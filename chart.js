@@ -6306,7 +6306,7 @@
             }, {
                 region: "South West",
                 local_authority: "North Devon",
-                address_count: 45170,nn 
+                address_count: 45170,
                 regional_poverty_rate: 11.9,
                 local_authority_poverty_rate: 14.353104250039125
             }, {
