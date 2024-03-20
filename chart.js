@@ -6306,7 +6306,7 @@
             }, {
                 region: "South West",
                 local_authority: "North Devon",
-                address_count: 45170,
+                address_count: 45170,nn 
                 regional_poverty_rate: 11.9,
                 local_authority_poverty_rate: 14.353104250039125
             }, {
@@ -7028,7 +7028,7 @@
                 setTimeout(()=>{
                         F()
                         console.log("Chart file loaded: calling API's now");
-                        if(window.location.pathname == '/' || window.location.pathname == "/profile-creation") {
+                        if(window.location.pathname == '/' || window.location.pathname == "/profile-creation" || window.location.pathname == "/audience-creation") {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
                                 console.log("This is been clicked")
                         } else {
