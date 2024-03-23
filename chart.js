@@ -4788,6 +4788,7 @@
                             break;
                         case 'CurrentEnergyConsumptionLower':
                             if (last_applied_filter && last_applied_filter[key] === t[key]
+                                console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
                                 && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
                                 return
                             } else {
