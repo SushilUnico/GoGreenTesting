@@ -4787,11 +4787,15 @@
                             }
                             break;
                         case 'CurrentEnergyConsumptionLower':
-                                    console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
                             if (last_applied_filter && last_applied_filter[key] === t[key]
                                 && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
+                                     console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
                                 return
                             } else {
+                                    console.log("com",payload['energy_consumption_current'] = {
+                                    lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
+                                    higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
+                                };)
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
                                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
