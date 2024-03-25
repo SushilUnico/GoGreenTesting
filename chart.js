@@ -4792,7 +4792,7 @@
                                      console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
                                 return
                             } else {
-                                    console.log("com",document.getElementById('current_heat_consumption_from-2'))
+                                    console.log("com",document.getElementById('current_heat_consumption_from-2').value)
                                     
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
