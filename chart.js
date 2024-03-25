@@ -4803,6 +4803,7 @@
                         case 'Tenure':
                             if (compare_arrays(key, last_applied_filter, t)) {
                                 const tmp = {}
+                                    conosle.log("t[key]",t[key])
                                 t[key].forEach(x => {
                                     tmp[x] = true
                                 })
