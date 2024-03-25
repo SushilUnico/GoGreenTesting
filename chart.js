@@ -4710,154 +4710,301 @@
                         })).json()
                 }
 
-                let payload = {};
-                if (t.LocalAuthorityLabels.length === 296 || !t.LocalAuthorityLabels.length) {
-                    payload['la_select_status'] = false;
-                    payload['local_authority_name'] = null;
-                } else {
-                    payload['la_select_status'] = true;
-                    payload['local_authority_name'] = t.LocalAuthorityLabels;
-                }
+                // let payload = {};
+                // if (t.LocalAuthorityLabels.length === 296 || !t.LocalAuthorityLabels.length) {
+                //     payload['la_select_status'] = false;
+                //     payload['local_authority_name'] = null;
+                // } else {
+                //     payload['la_select_status'] = true;
+                //     payload['local_authority_name'] = t.LocalAuthorityLabels;
+                // }
 
-                if (last_applied_filter) {
-                    if (!compare_arrays('LocalAuthorityLabels', last_applied_filter, t)) {
-                        payload['la_select_status'] = false;
-                        delete payload['local_authority_name'];
-                    }
-                }
+                // if (last_applied_filter) {
+                //     if (!compare_arrays('LocalAuthorityLabels', last_applied_filter, t)) {
+                //         payload['la_select_status'] = false;
+                //         delete payload['local_authority_name'];
+                //     }
+                // }
 
-                keys.forEach(key => {
-                    switch (key){
-                        case 'Regions':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['region'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                                if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
-                                    payload['la_select_status'] = false;
-                                    payload['local_authority_name'] = null;
-                                } else {
-                                    payload['la_select_status'] = true;
-                                    payload['local_authority_name'] = t.LocalAuthorityLabels;
-                                }
-                            }
-                            break;
-                        case 'FuelPovertyRateLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['FuelPovertyRateUpper'] === t['FuelPovertyRateUpper']) {
-                                delete payload['house_fuel_poverty'];
-                            } else {
-                                payload['house_fuel_poverty'] = {
-                                    'lower': t[key],
-                                    'higher': t['FuelPovertyRateUpper']
-                                };
-                            }
-                            break;
-                        case 'CurrentEnergyRating':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['current_energy_rating'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'HotWaterEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['hot_water_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'WindowsEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['windows_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'WallsEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['walls_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'RoofEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['roof_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'HeatingEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['mainheat_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'LightingEnergyEfficiency':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['lighting_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
-                            }
-                            break;
-                        case 'CurrentEnergyConsumptionLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
-                                     console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
-                                return
-                            } else {
-                                    console.log("com",document.getElementById('current_heat_consumption_from-2').value)
+                // keys.forEach(key => {
+                //     switch (key){
+                //         case 'Regions':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['region'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //                 if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
+                //                     payload['la_select_status'] = false;
+                //                     payload['local_authority_name'] = null;
+                //                 } else {
+                //                     payload['la_select_status'] = true;
+                //                     payload['local_authority_name'] = t.LocalAuthorityLabels;
+                //                 }
+                //             }
+                //             break;
+                //         case 'FuelPovertyRateLower':
+                //             if (last_applied_filter && last_applied_filter[key] === t[key]
+                //                 && last_applied_filter['FuelPovertyRateUpper'] === t['FuelPovertyRateUpper']) {
+                //                 delete payload['house_fuel_poverty'];
+                //             } else {
+                //                 payload['house_fuel_poverty'] = {
+                //                     'lower': t[key],
+                //                     'higher': t['FuelPovertyRateUpper']
+                //                 };
+                //             }
+                //             break;
+                //         case 'CurrentEnergyRating':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['current_energy_rating'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'HotWaterEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['hot_water_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'WindowsEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['windows_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'WallsEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['walls_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'RoofEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['roof_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'HeatingEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['mainheat_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'LightingEnergyEfficiency':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['lighting_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                //             }
+                //             break;
+                //         case 'CurrentEnergyConsumptionLower':
+                //             if (last_applied_filter && last_applied_filter[key] === t[key]
+                //                 && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
+                //                      console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
+                //                 return
+                //             } else {
+                //                     console.log("com",document.getElementById('current_heat_consumption_from-2').value)
                                     
-                                payload['energy_consumption_current'] = {
-                                    lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
-                                    higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
-                                };
-                            }
-                            break;
-                        case 'Tenure':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                const tmp = {}
-                                t[key].forEach(x => {
-                                    tmp[x] = true
-                                })
-                                if (tmp['unknown']) {
-                                    tmp[''] = true;
-                                } else {
-                                    delete tmp['unknown'];
-                                    delete tmp[''];
-                                }
-                                payload['tenure'] = t[key].length === 0 ? null : Object.keys(tmp)
-                            }
-                            break;
-                        case 'MainsGasFlag':
-                            if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['mains_gas_flag'] = t[key];
-                            }
-                            break;
-                        case 'IncomeDeprivationRangeChildLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeChildUpper'] === t['IncomeDeprivationRangeChildUpper']) {
-                                return
-                            } else {
-                                payload['idc_value'] = {
-                                    'lower': t[key],
-                                    'higher': t['IncomeDeprivationRangeChildUpper']
-                                };
-                            }
-                            break;
-                        case 'IncomeDeprivationRangeElderLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeElderUpper'] === t['IncomeDeprivationRangeElderUpper']) {
-                                return
-                            } else {
-                                payload['idop_value'] = {
-                                    'lower': t[key],
-                                    'higher': t['IncomeDeprivationRangeElderUpper']
-                                };
-                            }
-                            break;
-                        case 'IncomeDeprivationRangeLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeUpper'] === t['IncomeDeprivationRangeUpper']) {
-                                return
-                            } else {
-                                payload['income_deprivation_value'] = {
-                                    'lower': t[key],
-                                    'higher': t['IncomeDeprivationRangeUpper']
-                                };
-                            }
-                            break;
-                    }
-                });
+                //                 payload['energy_consumption_current'] = {
+                //                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
+                //                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
+                //                 };
+                //             }
+                //             break;
+                //         case 'Tenure':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 const tmp = {}
+                //                 t[key].forEach(x => {
+                //                     tmp[x] = true
+                //                 })
+                //                 if (tmp['unknown']) {
+                //                     tmp[''] = true;
+                //                 } else {
+                //                     delete tmp['unknown'];
+                //                     delete tmp[''];
+                //                 }
+                //                 payload['tenure'] = t[key].length === 0 ? null : Object.keys(tmp)
+                //             }
+                //             break;
+                //         case 'MainsGasFlag':
+                //             if (compare_arrays(key, last_applied_filter, t)) {
+                //                 payload['mains_gas_flag'] = t[key];
+                //             }
+                //             break;
+                //         case 'IncomeDeprivationRangeChildLower':
+                //             if (last_applied_filter && last_applied_filter[key] === t[key]
+                //                 && last_applied_filter['IncomeDeprivationRangeChildUpper'] === t['IncomeDeprivationRangeChildUpper']) {
+                //                 return
+                //             } else {
+                //                 payload['idc_value'] = {
+                //                     'lower': t[key],
+                //                     'higher': t['IncomeDeprivationRangeChildUpper']
+                //                 };
+                //             }
+                //             break;
+                //         case 'IncomeDeprivationRangeElderLower':
+                //             if (last_applied_filter && last_applied_filter[key] === t[key]
+                //                 && last_applied_filter['IncomeDeprivationRangeElderUpper'] === t['IncomeDeprivationRangeElderUpper']) {
+                //                 return
+                //             } else {
+                //                 payload['idop_value'] = {
+                //                     'lower': t[key],
+                //                     'higher': t['IncomeDeprivationRangeElderUpper']
+                //                 };
+                //             }
+                //             break;
+                //         case 'IncomeDeprivationRangeLower':
+                //             if (last_applied_filter && last_applied_filter[key] === t[key]
+                //                 && last_applied_filter['IncomeDeprivationRangeUpper'] === t['IncomeDeprivationRangeUpper']) {
+                //                 return
+                //             } else {
+                //                 payload['income_deprivation_value'] = {
+                //                     'lower': t[key],
+                //                     'higher': t['IncomeDeprivationRangeUpper']
+                //                 };
+                //             }
+                //             break;
+                //     }
+                // });
+                    let payload = {};
+
+const region = document.querySelectorAll("input[type=checkbox][name=region]");
+const filters_applied_region = Wized.data.f.profile_filters_form.region;
+if (region.length === filters_applied_region.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['region'] = filters_applied_region;
+}
+
+const local_authority = document.querySelectorAll("input[type=checkbox][name=local_authority]");
+const filters_applied_local_authority = Wized.data.f.profile_filters_form.local_authority;
+if (local_authority.length === filters_applied_local_authority.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['local_authority_name'] = filters_applied_local_authority;
+}
+
+const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]");
+const filters_applied_energy_rating = Wized.data.f.profile_filters_form.current_energy_rating;
+if (c_energy.length === filters_applied_energy_rating.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['current_energy_rating'] = filters_applied_energy_rating;
+}
+
+const fuel_poverty_rate_from = document.getElementById('fuel_poverty_rate_from-2');
+const fuel_poverty_rate_to = document.getElementById('fuel_poverty_rate_to-2');
+if (fuel_poverty_rate_from.value !== '0' || fuel_poverty_rate_to.value !== '100') {
+  payload['house_fuel_poverty'] = {
+    lower: Number(fuel_poverty_rate_from.value),
+    higher: Number(fuel_poverty_rate_to.value)
+  };
+} else {
+  // Do nothing, default values applied
+}
+
+const income_deprivation_domain_from = document.getElementById('income_deprivation_domain_from-2');
+const income_deprivation_domain_to = document.getElementById('income_deprivation_domain_to-2');
+if (income_deprivation_domain_from.value !== '0' || income_deprivation_domain_to.value !== '1') {
+  payload['income_deprivation_value'] = {
+    lower: Number(income_deprivation_domain_from.value),
+    higher: Number(income_deprivation_domain_to.value)
+  };
+} else {
+  // Do nothing, default values applied
+}
+
+const h_energy = document.querySelectorAll("input[type=checkbox][name=hot_water_energy_efficiency]");
+const filters_applied_hot_water = Wized.data.f.profile_filters_form.hot_water_energy_efficiency;
+if (h_energy.length === filters_applied_hot_water.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['hot_water_energy_eff'] = filters_applied_hot_water;
+}
+
+const w_energy = document.querySelectorAll("input[type=checkbox][name=windows_energy_efficiency]")
+const filters_applied_w_energy = Wized.data.f.profile_filters_form.windows_energy_efficiency;
+if (w_energy.length === filters_applied_w_energy.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['windows_energy_eff'] = filters_applied_w_energy;
+}
+
+const wa_energy = document.querySelectorAll("input[type=checkbox][name=walls_energy_efficiency]")
+const filters_applied_wa_energy = Wized.data.f.profile_filters_form.walls_energy_efficiency;
+if (wa_energy.length === filters_applied_wa_energy.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['walls_energy_eff'] = filters_applied_wa_energy;
+}
+
+const r_energy = document.querySelectorAll("input[type=checkbox][name=roof_energy_efficiency]")
+const filters_applied_roof_energy_eff = Wized.data.f.profile_filters_form.roof_energy_efficiency;
+if (r_energy.length === filters_applied_roof_energy_eff.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['roof_energy_eff'] = filters_applied_roof_energy_eff;
+}
+
+const mh_energy = document.querySelectorAll("input[type=checkbox][name=main_heat_energy_efficiency]")
+const filters_applied_mainheat_energy_eff = Wized.data.f.profile_filters_form.main_heat_energy_efficiency;
+if (mh_energy.length === filters_applied_mainheat_energy_eff.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['mainheat_energy_eff'] = filters_applied_mainheat_energy_eff;
+}
+
+const tenure = document.querySelectorAll("input[type=checkbox][name=tenure]")
+const filters_applied_tenure = Wized.data.f.profile_filters_form.tenure;
+if (tenure.length === filters_applied_tenure.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['tenure'] = filters_applied_tenure;
+}
+
+const mains_gas_flag = document.querySelectorAll("input[type=checkbox][name=main_gas]")
+const filters_applied_mains_gas_flag = Wized.data.f.profile_filters_form.main_gas;
+if (mains_gas_flag.length === filters_applied_mains_gas_flag.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['mains_gas_flag'] = filters_applied_mains_gas_flag;
+}
+
+const current_heat_consumption_from = document.getElementById('current_heat_consumption_from-2');
+const current_heat_consumption_to = document.getElementById('current_heat_consumption_to-2');
+if (current_heat_consumption_from.value !== '0' || current_heat_consumption_to.value !== '313') {
+  payload['energy_consumption_current'] = {
+    lower: Number(current_heat_consumption_from.value),
+    higher: Number(current_heat_consumption_to.value)
+  };
+} else {
+  // Do nothing, default values applied
+}
+
+const income_deprivation_older_from = document.getElementById('income_deprivation_older_from-2');
+const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2');
+if (income_deprivation_older_from.value !== '0' || income_deprivation_older_to.value !== '313') {
+  payload['idop_value'] = {
+    lower: Number(income_deprivation_older_from.value),
+    higher: Number(income_deprivation_older_to.value)
+  };
+} else {
+  // Do nothing, default values applied
+}
+
+const income_deprivation_children_from = document.getElementById('income_deprivation_children_from-2');
+const income_deprivation_children_to = document.getElementById('income_deprivation_children_to-2');
+if (income_deprivation_children_from.value !== '0' || income_deprivation_children_to.value !== '313') {
+  payload['idc_value'] = {
+    lower: Number(income_deprivation_children_from.value),
+    higher: Number(income_deprivation_children_from.value)
+  };
+} else {
+  // Do nothing, default values applied
+}
+
+const lighting_energy_eff = document.querySelectorAll("input[type=checkbox][name=lighting_energy_efficiency]")
+const filters_applied_lighting_energy_eff = Wized.data.f.profile_filters_form.lighting_energy_efficiency;
+if (lighting_energy_eff.length === filters_applied_lighting_energy_eff.length) {
+  // Do nothing, filters already applied
+} else {
+  payload['lighting_energy_eff'] = filters_applied_roof_energy_eff;
+}
+
+return payload;
+
                 last_applied_filter = JSON.parse(JSON.stringify(t));
                 console.log('====== CHART API PAYLOAD APPLY ======');
-                console.log(last_applied_filter);
+                console.log("payload",payload);
                 /*fetch(`${Audr}/address_match`, {
                     method: "POST",
                     headers: {
