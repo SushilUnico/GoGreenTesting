@@ -5001,11 +5001,11 @@
                   payload['lighting_energy_eff'] = filters_applied_roof_energy_eff;
                 }
                 
+                console.log("payload",payload);
                 return payload;
 
                 last_applied_filter = JSON.parse(JSON.stringify(t));
                 console.log('====== CHART API PAYLOAD APPLY ======');
-                console.log("payload",payload);
                 /*fetch(`${Audr}/address_match`, {
                     method: "POST",
                     headers: {
