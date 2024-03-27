@@ -4744,6 +4744,7 @@
                             }
                             break;
                         case 'FuelPovertyRateLower':
+                                    console.log("FuelPovertyRateLower", t[key])
                             if (last_applied_filter && last_applied_filter[key] === t[key]
                                 && last_applied_filter['FuelPovertyRateUpper'] === t['FuelPovertyRateUpper']) {
                                 delete payload['house_fuel_poverty'];
@@ -4864,6 +4865,7 @@
                                     'higher': t['IncomeDeprivationRangeUpper']
                                 };
                             }
+                        
                             break;
                     }
                 });
