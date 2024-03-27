@@ -4731,6 +4731,7 @@
                     switch (key){
                         case 'Regions':
                             if (compare_arrays(key, last_applied_filter, t)) {
+                                    console.log("regions",t[key])
                                 payload['region'] = (!t[key] || t[key].length == 0) ? null : t[key];
                                 if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
                                     payload['la_select_status'] = false;
