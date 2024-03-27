@@ -4727,6 +4727,7 @@
                 }
 
                 keys.forEach(key => {
+                        console.log(key);
                     switch (key){
                         case 'Regions':
                             if (compare_arrays(key, last_applied_filter, t)) {
