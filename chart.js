@@ -4730,8 +4730,9 @@
                         console.log(key);
                     switch (key){
                         case 'Regions':
+                        const region = document.querySelectorAll("input[type=checkbox][name=region]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                    console.log("regions",t[key])
+                                    console.log("regions",t[key].length, region.length);
                                 payload['region'] = (!t[key] || t[key].length == 0) ? null : t[key];
                                 if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
                                     payload['la_select_status'] = false;
