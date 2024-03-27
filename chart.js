@@ -4750,8 +4750,7 @@
                                 delete payload['house_fuel_poverty'];
                             } else {
                                 (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
-
-                            }
+                            };
                         // (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
                         
                             break;
