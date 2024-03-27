@@ -4802,8 +4802,6 @@
                                      console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
                                 return
                             } else {
-                                    console.log("com",document.getElementById('current_heat_consumption_from-2').value)
-                                    
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
                                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
@@ -4837,6 +4835,7 @@
                                 && last_applied_filter['IncomeDeprivationRangeChildUpper'] === t['IncomeDeprivationRangeChildUpper']) {
                                 return
                             } else {
+                                (t[key] == 0 && t['IncomeDeprivationRangeChildUpper'] == 1) ? null :
                                 payload['idc_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeChildUpper']
@@ -4848,6 +4847,7 @@
                                 && last_applied_filter['IncomeDeprivationRangeElderUpper'] === t['IncomeDeprivationRangeElderUpper']) {
                                 return
                             } else {
+                                  (t[key] == 0 && t['IncomeDeprivationRangeElderUpper'] == 1) ? null :
                                 payload['idop_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeElderUpper']
@@ -4859,6 +4859,7 @@
                                 && last_applied_filter['IncomeDeprivationRangeUpper'] === t['IncomeDeprivationRangeUpper']) {
                                 return
                             } else {
+                        (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeUpper']
