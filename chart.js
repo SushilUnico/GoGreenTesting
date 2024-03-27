@@ -4755,38 +4755,45 @@
                             }
                             break;
                         case 'CurrentEnergyRating':
+                        const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['current_energy_rating'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                               (t[key].length != c_energy.length) ? payload['current_energy_rating'] =  t[key] : null;
                             }
                             break;
                         case 'HotWaterEnergyEfficiency':
+                        const h_energy = document.querySelectorAll("input[type=checkbox][name=hot_water_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['hot_water_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                              (t[key].length != h_energy.length) ?  payload['hot_water_energy_eff'] = t[key] : null;
                             }
                             break;
                         case 'WindowsEnergyEfficiency':
+                        const w_energy = document.querySelectorAll("input[type=checkbox][name=windows_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['windows_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                                (t[key].length != w_energy.length) ? payload['windows_energy_eff'] = t[key] : null;
                             }
                             break;
                         case 'WallsEnergyEfficiency':
+                        const wa_energy = document.querySelectorAll("input[type=checkbox][name=walls_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['walls_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                             (t[key].length != wa_energy.length) ? payload['walls_energy_eff'] =  t[key] : null;
                             }
                             break;
                         case 'RoofEnergyEfficiency':
+                        const r_energy = document.querySelectorAll("input[type=checkbox][name=roof_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['roof_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                               (t[key].length != r_energy.length) ? payload['roof_energy_eff'] = t[key] : null;
                             }
                             break;
                         case 'HeatingEnergyEfficiency':
+                        const mh_energy = document.querySelectorAll("input[type=checkbox][name=main_heat_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['mainheat_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                               (t[key].length != mh_energy.length) ? payload['mainheat_energy_eff'] = t[key] : null;
                             }
                             break;
                         case 'LightingEnergyEfficiency':
+                        const l_energy = document.querySelectorAll("input[type=checkbox][name=lighting_energy_efficiency]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['lighting_energy_eff'] = (!t[key] || t[key].length == 0) ? null : t[key];
+                               (t[key].length != l_energy.length) ? payload['lighting_energy_eff'] = t[key] : null;
                             }
                             break;
                         case 'CurrentEnergyConsumptionLower':
@@ -4804,7 +4811,7 @@
                             }
                             break;
                         case 'Tenure':
-                                    console.log("te",t)
+                        const tenure = document.querySelectorAll("input[type=checkbox][name=tenure]")
                             if (compare_arrays(key, last_applied_filter, t)) {
                                 const tmp = {}
                                 t[key].forEach(x => {
@@ -4816,12 +4823,13 @@
                                     delete tmp['unknown'];
                                     delete tmp[''];
                                 }
-                                payload['tenure'] = t[key].length === 0 ? null : Object.keys(tmp)
+                                (t[key].length != tenure.length) ? payload['tenure'] = Object.keys(tmp) : null
                             }
                             break;
                         case 'MainsGasFlag':
+                        const m_gas = document.querySelectorAll("input[type=checkbox][name=main_gas]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                payload['mains_gas_flag'] = t[key];
+                               (t[key].length != m_gas.length) ? payload['mains_gas_flag'] = t[key] : null;
                             }
                             break;
                         case 'IncomeDeprivationRangeChildLower':
