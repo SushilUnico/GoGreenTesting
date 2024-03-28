@@ -4730,8 +4730,8 @@
                         console.log(key);
                     switch (key){
                         case 'Regions':
-                        const region = document.querySelectorAll("input[type=checkbox][name=region]")
-                        const local_authority = document.querySelectorAll("input[type=checkbox][name=local_authority]")
+                        const region = document.querySelectorAll("input[type=checkbox][name=region]");
+                        const local_authority = document.querySelectorAll("input[type=checkbox][name=local_authority]");
                                 (t[key].length != region.length) ? payload['region'] =   t[key] : null;
                                 if(t.LocalAuthorityLabels.length == local_authority.length ) {
                                     payload['la_select_status'] = false;
@@ -4749,6 +4749,7 @@
                             break;
                         case 'CurrentEnergyRating':
                         const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]")
+                                
                                (t[key].length != c_energy.length) ? payload['current_energy_rating'] =  t[key] : null;
                             break;
                         case 'HotWaterEnergyEfficiency':
