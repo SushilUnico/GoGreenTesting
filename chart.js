@@ -4746,13 +4746,8 @@
                             }
                             break;
                         case 'FuelPovertyRateLower':
-                                    console.log("FuelPovertyRateLower", t[key])
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['FuelPovertyRateUpper'] === t['FuelPovertyRateUpper']) {
-                                delete payload['house_fuel_poverty'];
-                            } else {
-                                (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
-                            }; 
+                                console.log("FuelPovertyRateLower", t[key])
+                                (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
                         // (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
                         
                             break;
