@@ -4816,6 +4816,7 @@
                                 };
                             break;
                         case 'IncomeDeprivationRangeLower':
+                        console.log(t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1)
                         (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
