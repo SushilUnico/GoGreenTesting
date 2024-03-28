@@ -4727,7 +4727,6 @@
                 // }
 
                 keys.forEach(key => {
-                        console.log(key);
                     switch (key){
                         case 'Regions':
                         const region = document.querySelectorAll("input[type=checkbox][name=region]");
@@ -4816,8 +4815,8 @@
                                 };
                             break;
                         case 'IncomeDeprivationRangeLower':
+                        console.log("IncomeDeprivationRangeLower", t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1);
                         (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
-                                console.log(t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1)
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeUpper']
@@ -7004,7 +7003,6 @@
                         console.log("Chart file loaded: calling API's now");
                         if(window.location.pathname == '/' || window.location.pathname == "/profile-creation") {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
-                                console.log("This is been clicked")
                         } else {
                             // document.querySelector('.filters_submit-button').click(); // TODO: instead of triggering click event listen an event from wized that filters are loaded
                             q(document.querySelector('a[wized="chart_section_toggle"]'), "click", (e)=>{
@@ -7015,7 +7013,6 @@
                     , 5e3);
                 function F() {
                     let g = t.querySelector(A["chart-toggle"]);
-                        console.log("chart-toggle",g);
                     g && q(g, "change", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
@@ -7087,10 +7084,8 @@
                     ;
                     return [q(t.querySelector(A["filters-reset-button"]), "click", async()=>{
                         if(window.location.pathname !== '/profile-creation') {
-                                console.log("reset")
                             await NN('reset');
                         } else {
-                                console.log("apply")
                             await NN('apply');
                         }
                     }
