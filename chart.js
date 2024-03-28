@@ -4731,12 +4731,12 @@
                     switch (key){
                         case 'Regions':
                         const region = document.querySelectorAll("input[type=checkbox][name=region]")
+                        const local_authority = document.querySelectorAll("input[type=checkbox][name=local_authority]")
                             if (compare_arrays(key, last_applied_filter, t)) {
-                                    console.log("regions",t[key].length, region.length);
                                 (t[key].length != region.length) ? payload['region'] =   t[key] : null;
-                                if (t.LocalAuthorityLabels.length == 296 || !t.LocalAuthorityLabels.length) {
+                                (t.LocalAuthorityLabels.length == local_authority.length ) {
                                     payload['la_select_status'] = false;
-                                    payload['local_authority_name'] = null;
+                                    // payload['local_authority_name'] = null;
                                 } else {
                                     payload['la_select_status'] = true;
                                     payload['local_authority_name'] = t.LocalAuthorityLabels;
@@ -4800,6 +4800,7 @@
                             if (last_applied_filter && last_applied_filter[key] === t[key]
                                 && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
                                      console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
+                                     console.log("tes1", t[key]);
                                 return
                             } else {
                                 payload['energy_consumption_current'] = {
