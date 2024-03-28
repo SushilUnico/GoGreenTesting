@@ -4774,6 +4774,7 @@
                         case 'CurrentEnergyConsumptionLower':
                         const current_heat_consumption_from  = document.getElementById('current_heat_consumption_from-2');
                         const current_heat_consumption_to  = document.getElementById('current_heat_consumption_to-2');
+                        console.log("CurrentEnergyConsumptionLower", t['CurrentEnergyConsumptionLower'], t['CurrentEnergyConsumptionUpper']);
                         (t['CurrentEnergyConsumptionLower'] == -10 && t['CurrentEnergyConsumptionUpper'] == 313) ? null : 
                                 payload['energy_consumption_current'] = {
                                     lower: Number(t[key]) * 1000,
