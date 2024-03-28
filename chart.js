@@ -4799,11 +4799,11 @@
                         case 'CurrentEnergyConsumptionLower':
                             if (last_applied_filter && last_applied_filter[key] === t[key]
                                 && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
-                                     console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
+                                     console.log("tes", t['CurrentEnergyConsumptionUpper']);
                                      console.log("tes1", t[key]);
                                 return
                             } else {
-                                console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
+                                console.log("tes", t['CurrentEnergyConsumptionUpper']);
                                 console.log("tes1", t[key]);
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
