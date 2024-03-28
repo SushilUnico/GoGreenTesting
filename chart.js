@@ -4813,7 +4813,7 @@
                         const income_deprivation_older_from  = document.getElementById('income_deprivation_older_from-2');
                         const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2');
                         console.log("income_deprivation_older_to",income_deprivation_older_to);
-                        (income_deprivation_older_from.value == 0 && income_deprivation_older_to.value == 1) ? null :
+                        (income_deprivation_older_from.value == 0 &&(income_deprivation_older_to && income_deprivation_older_to.value == 1)) ? null :
                                 payload['idop_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeElderUpper']
