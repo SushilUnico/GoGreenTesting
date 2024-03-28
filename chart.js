@@ -4711,20 +4711,20 @@
                 }
 
                 let payload = {};
-                if (t.LocalAuthorityLabels.length === 296 || !t.LocalAuthorityLabels.length) {
-                    payload['la_select_status'] = false;
-                    payload['local_authority_name'] = null;
-                } else {
-                    payload['la_select_status'] = true;
-                    payload['local_authority_name'] = t.LocalAuthorityLabels;
-                }
+                // if (t.LocalAuthorityLabels.length === 296 || !t.LocalAuthorityLabels.length) {
+                //     payload['la_select_status'] = false;
+                //     payload['local_authority_name'] = null;
+                // } else {
+                //     payload['la_select_status'] = true;
+                //     payload['local_authority_name'] = t.LocalAuthorityLabels;
+                // }
 
-                if (last_applied_filter) {
-                    if (!compare_arrays('LocalAuthorityLabels', last_applied_filter, t)) {
-                        payload['la_select_status'] = false;
-                        delete payload['local_authority_name'];
-                    }
-                }
+                // if (last_applied_filter) {
+                //     if (!compare_arrays('LocalAuthorityLabels', last_applied_filter, t)) {
+                //         payload['la_select_status'] = false;
+                //         delete payload['local_authority_name'];
+                //     }
+                // }
 
                 keys.forEach(key => {
                         console.log(key);
