@@ -4742,38 +4742,36 @@
                                 }
                             break;
                         case 'FuelPovertyRateLower':
-                        
-                        (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
+                                    (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
                         // (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
                         
                             break;
                         case 'CurrentEnergyRating':
-                        const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]")
-                                
+                        const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]");
                                (t[key].length != c_energy.length) ? payload['current_energy_rating'] =  t[key] : null;
                             break;
                         case 'HotWaterEnergyEfficiency':
-                        const h_energy = document.querySelectorAll("input[type=checkbox][name=hot_water_energy_efficiency]")
+                        const h_energy = document.querySelectorAll("input[type=checkbox][name=hot_water_energy_efficiency]");
                               (t[key].length != h_energy.length) ?  payload['hot_water_energy_eff'] = t[key] : null;
                             break;
                         case 'WindowsEnergyEfficiency':
-                        const w_energy = document.querySelectorAll("input[type=checkbox][name=windows_energy_efficiency]")
+                        const w_energy = document.querySelectorAll("input[type=checkbox][name=windows_energy_efficiency]");
                                 (t[key].length != w_energy.length) ? payload['windows_energy_eff'] = t[key] : null;
                             break;
                         case 'WallsEnergyEfficiency':
-                        const wa_energy = document.querySelectorAll("input[type=checkbox][name=walls_energy_efficiency]")
+                        const wa_energy = document.querySelectorAll("input[type=checkbox][name=walls_energy_efficiency]");
                              (t[key].length != wa_energy.length) ? payload['walls_energy_eff'] =  t[key] : null;
                             break;
                         case 'RoofEnergyEfficiency':
-                        const r_energy = document.querySelectorAll("input[type=checkbox][name=roof_energy_efficiency]")
+                        const r_energy = document.querySelectorAll("input[type=checkbox][name=roof_energy_efficiency]");
                                (t[key].length != r_energy.length) ? payload['roof_energy_eff'] = t[key] : null;
                             break;
                         case 'HeatingEnergyEfficiency':
-                        const mh_energy = document.querySelectorAll("input[type=checkbox][name=main_heat_energy_efficiency]")
+                        const mh_energy = document.querySelectorAll("input[type=checkbox][name=main_heat_energy_efficiency]");
                                (t[key].length != mh_energy.length) ? payload['mainheat_energy_eff'] = t[key] : null;
                             break;
                         case 'LightingEnergyEfficiency':
-                        const l_energy = document.querySelectorAll("input[type=checkbox][name=lighting_energy_efficiency]")
+                        const l_energy = document.querySelectorAll("input[type=checkbox][name=lighting_energy_efficiency]");
                                (t[key].length != l_energy.length) ? payload['lighting_energy_eff'] = t[key] : null;
                             break;
                         case 'CurrentEnergyConsumptionLower':
@@ -4800,7 +4798,7 @@
                                 (t[key].length != tenure.length) ? payload['tenure'] = Object.keys(tmp) : null
                             break;
                         case 'MainsGasFlag':
-                        const m_gas = document.querySelectorAll("input[type=checkbox][name=main_gas]")
+                        const m_gas = document.querySelectorAll("input[type=checkbox][name=main_gas]");
                                (t[key].length != m_gas.length) ? payload['mains_gas_flag'] = t[key] : null;
                             break;
                         case 'IncomeDeprivationRangeChildLower':
