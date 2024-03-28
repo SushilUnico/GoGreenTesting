@@ -7120,6 +7120,7 @@
                         }
                         // set Energy Efficiency current Rating
                         let p4 = (w = _.energyEfficiency.currentRatingField) == null ? void 0 : w.querySelectorAll("input");
+                        console.log("CurrentEnergyRating12", p4);
                         p4 == null || p4.forEach(x=>{
                                 let y = v.value.CurrentEnergyRating;
                                 console("CurrentEnergyRating",x);
