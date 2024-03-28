@@ -4821,6 +4821,7 @@
                         case 'IncomeDeprivationRangeLower':
                         const income_deprivation_domain_from  = document.getElementById('income_deprivation_domain_from-2');
                         const income_deprivation_domain_to = document.getElementById('income_deprivation_domain_to-2');
+                        console.log("income_deprivation_value",income_deprivation_domain_to.value);
                         (income_deprivation_domain_from.value == 0 && income_deprivation_domain_to.value == 1) ? null :
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
