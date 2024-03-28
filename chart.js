@@ -4797,19 +4797,23 @@
                             }
                             break;
                         case 'CurrentEnergyConsumptionLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
-                                     console.log("tes", t['CurrentEnergyConsumptionUpper']);
-                                     console.log("tes1", t[key]);
-                                return
-                            } else {
-                                console.log("tes", t['CurrentEnergyConsumptionUpper']);
-                                console.log("tes1", t[key]);
-                                payload['energy_consumption_current'] = {
+                        const current_heat_consumption_from  = document.getElementById('current_heat_consumption_from-2')
+                        const current_heat_consumption_to = document.getElementById('current_heat_consumption_to-2')
+                            // if (last_applied_filter && last_applied_filter[key] === t[key]
+                            //     && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
+                            //          console.log("tes", t['CurrentEnergyConsumptionUpper']);
+                            //          console.log("tes1", t[key]);
+                            //     return
+                            // } else {
+                            //     payload['energy_consumption_current'] = {
+                            //         lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
+                            //         higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
+                            //     };
+                            // }
+                        (Number(t[key]) == -10 && (t['CurrentEnergyConsumptionUpper']) == 313) ? null : payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
                                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
                                 };
-                            }
                             break;
                         case 'Tenure':
                         const tenure = document.querySelectorAll("input[type=checkbox][name=tenure]")
