@@ -4803,6 +4803,8 @@
                                      console.log("tes1", t[key]);
                                 return
                             } else {
+                                console.log("tes", last_applied_filter['CurrentEnergyConsumptionUpper']);
+                                console.log("tes1", t[key]);
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
                                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
