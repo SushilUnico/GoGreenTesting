@@ -4801,8 +4801,8 @@
                                (t[key].length != m_gas.length) ? payload['mains_gas_flag'] = t[key] : null;
                             break;
                         case 'IncomeDeprivationRangeChildLower':
-                        const income_deprivation_children_from  = document.getElementById('income_deprivation_children_from-2')
-                        const income_deprivation_children_to = document.getElementById('income_deprivation_children_to-2')
+                        const income_deprivation_children_from  = document.getElementById('income_deprivation_children_from-2');
+                        const income_deprivation_children_to = document.getElementById('income_deprivation_children_to-2');
                         (income_deprivation_children_from.value == 0 && income_deprivation_children_to.value == 1) ? null :
                                 payload['idc_value'] = {
                                     'lower': t[key],
@@ -4810,8 +4810,8 @@
                                 };
                             break;
                         case 'IncomeDeprivationRangeElderLower':
-                        const income_deprivation_older_from  = document.getElementById('income_deprivation_older_from-2')
-                        const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2')
+                        const income_deprivation_older_from  = document.getElementById('income_deprivation_older_from-2');
+                        const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2');
                         (income_deprivation_older_from.value == 0 && income_deprivation_older_from.value == 1) ? null :
                                 payload['idop_value'] = {
                                     'lower': t[key],
