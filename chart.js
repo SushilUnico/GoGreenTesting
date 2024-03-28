@@ -4741,7 +4741,7 @@
                                 }
                             break;
                         case 'FuelPovertyRateLower':
-                                    (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
+                        (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
                         // (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
                         
                             break;
@@ -4801,14 +4801,18 @@
                                (t[key].length != m_gas.length) ? payload['mains_gas_flag'] = t[key] : null;
                             break;
                         case 'IncomeDeprivationRangeChildLower':
-                                (t[key] == 0 && t['IncomeDeprivationRangeChildUpper'] == 1) ? null :
+                        const income_deprivation_children_from  = document.getElementById('income_deprivation_children_from-2')
+                        const income_deprivation_children_to = document.getElementById('income_deprivation_children_to-2')
+                        (income_deprivation_children_from.value == 0 && income_deprivation_children_to.value == 1) ? null :
                                 payload['idc_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeChildUpper']
                                 };
                             break;
                         case 'IncomeDeprivationRangeElderLower':
-                                  (t[key] == 0 && t['IncomeDeprivationRangeElderUpper'] == 1) ? null :
+                        const income_deprivation_older_from  = document.getElementById('income_deprivation_older_from-2')
+                        const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2')
+                        (income_deprivation_older_from.value == 0 && income_deprivation_older_from.value == 1) ? null :
                                 payload['idop_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeElderUpper']
@@ -4817,9 +4821,7 @@
                         case 'IncomeDeprivationRangeLower':
                         const income_deprivation_domain_from  = document.getElementById('income_deprivation_domain_from-2');
                         const income_deprivation_domain_to = document.getElementById('income_deprivation_domain_to-2');
-                        console.log("Income Deprivation RangeLower", income_deprivation_domain_from.value, income_deprivation_domain_to.value);
-                        console.log("IncomeDeprivationRangeLower", t[key] ,t['IncomeDeprivationRangeUpper']);
-                        (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
+                        (income_deprivation_domain_from.value == 0 && income_deprivation_domain_to.value == 1) ? null :
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeUpper']
