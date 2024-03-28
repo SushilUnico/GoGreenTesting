@@ -4815,7 +4815,9 @@
                                 };
                             break;
                         case 'IncomeDeprivationRangeLower':
-                        console.log(Wized.data.n.path);
+                        const income_deprivation_domain_from  = document.getElementById('income_deprivation_domain_from-2');
+                        const income_deprivation_domain_to = document.getElementById('income_deprivation_domain_to-2');
+                        console.log("Income Deprivation RangeLower", income_deprivation_domain_from.value, income_deprivation_domain_to.value);
                         console.log("IncomeDeprivationRangeLower", t[key] ,t['IncomeDeprivationRangeUpper']);
                         (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
                                 payload['income_deprivation_value'] = {
