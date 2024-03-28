@@ -4796,17 +4796,6 @@
                         case 'CurrentEnergyConsumptionLower':
                         const current_heat_consumption_from  = document.getElementById('current_heat_consumption_from-2');
                         const current_heat_consumption_to = document.getElementById('current_heat_consumption_to-2');
-                            // if (last_applied_filter && last_applied_filter[key] === t[key]
-                            //     && last_applied_filter['CurrentEnergyConsumptionUpper'] === t['CurrentEnergyConsumptionUpper']) {
-                            //          console.log("tes", t['CurrentEnergyConsumptionUpper']);
-                            //          console.log("tes1", t[key]);
-                            //     return
-                            // } else {
-                            //     payload['energy_consumption_current'] = {
-                            //         lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
-                            //         higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
-                            //     };
-                            // }
                         (current_heat_consumption_from.value == -10 && current_heat_consumption_to.value == 313) ? null : 
                                 payload['energy_consumption_current'] = {
                                     lower: (Number(t[key]) == 313) ? 312274 : (Number(t[key]) * 1000),
@@ -4836,41 +4825,25 @@
                             }
                             break;
                         case 'IncomeDeprivationRangeChildLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeChildUpper'] === t['IncomeDeprivationRangeChildUpper']) {
-                                return
-                            } else {
                                 (t[key] == 0 && t['IncomeDeprivationRangeChildUpper'] == 1) ? null :
                                 payload['idc_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeChildUpper']
                                 };
-                            }
                             break;
                         case 'IncomeDeprivationRangeElderLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeElderUpper'] === t['IncomeDeprivationRangeElderUpper']) {
-                                return
-                            } else {
                                   (t[key] == 0 && t['IncomeDeprivationRangeElderUpper'] == 1) ? null :
                                 payload['idop_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeElderUpper']
                                 };
-                            }
                             break;
                         case 'IncomeDeprivationRangeLower':
-                            if (last_applied_filter && last_applied_filter[key] === t[key]
-                                && last_applied_filter['IncomeDeprivationRangeUpper'] === t['IncomeDeprivationRangeUpper']) {
-                                return
-                            } else {
                         (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
                                 payload['income_deprivation_value'] = {
                                     'lower': t[key],
                                     'higher': t['IncomeDeprivationRangeUpper']
                                 };
-                            }
-                        
                             break;
                     }
                 });
