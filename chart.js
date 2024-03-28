@@ -4815,6 +4815,7 @@
                                 };
                             break;
                         case 'IncomeDeprivationRangeLower':
+                        console.log(Wized.data.n.path);
                         console.log("IncomeDeprivationRangeLower", t[key] ,t['IncomeDeprivationRangeUpper']);
                         (t[key] == 0 && t['IncomeDeprivationRangeUpper'] == 1) ? null :
                                 payload['income_deprivation_value'] = {
