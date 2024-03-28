@@ -7179,7 +7179,7 @@
                         if (p10) {
                             let y = (w = p10.querySelector('[name="current_heat_consumption_from"]')) == null ? void 0 : w.value
                                 , M = (x = p10.querySelector('[name="current_heat_consumption_to"]')) == null ? void 0 : x.value;
-                            v.setValue("CurrentEnergyConsumptionLower", Number(y != null ? y : -10)); //0
+                            v.setValue("CurrentEnergyConsumptionLower", Number(y != null ? y : 0)); //0
                             v.setValue("CurrentEnergyConsumptionUpper", Number(M != null ? M : 313)); //313
                         }
                         // set householdIncome tenureField
