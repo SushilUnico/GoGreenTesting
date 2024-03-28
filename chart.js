@@ -4742,8 +4742,6 @@
                             break;
                         case 'FuelPovertyRateLower':
                         (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null : payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']} 
-                        // (t[key] == 0 && t['FuelPovertyRateUpper'] == 100 ) ?  null ? payload['house_fuel_poverty'] = {'lower': t[key],'higher': t['FuelPovertyRateUpper']}
-                        
                             break;
                         case 'CurrentEnergyRating':
                         const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]");
@@ -4774,10 +4772,9 @@
                                (t[key].length != l_energy.length) ? payload['lighting_energy_eff'] = t[key] : null;
                             break;
                         case 'CurrentEnergyConsumptionLower':
-                        const current_heat_consumption_from1  = document.getElementById('current_heat_consumption_from-2');
-                        const current_heat_consumption_to1 = document.getElementById('current_heat_consumption_to-2');
-                        console.log("energy_consumption_current", current_heat_consumption_from1.value, current_heat_consumption_to1.value);
-                        (current_heat_consumption_from1.value == -10 && current_heat_consumption_to1.value == 313) ? null : 
+                        const current_heat_consumption_from  = document.getElementById('current_heat_consumption_from-2');
+                        const current_heat_consumption_to  = document.getElementById('current_heat_consumption_to-2');
+                        (t['CurrentEnergyConsumptionLower'] == -10 && t['CurrentEnergyConsumptionUpper'] == 313) ? null : 
                                 payload['energy_consumption_current'] = {
                                     lower: Number(t[key]) * 1000,
                                     higher: (Number(t['CurrentEnergyConsumptionUpper']) == 313) ? 312274 : (Number(t['CurrentEnergyConsumptionUpper']) * 1000)
