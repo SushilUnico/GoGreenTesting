@@ -4734,6 +4734,8 @@
                         const local_authority = document.querySelectorAll("input[type=checkbox][name=local_authority]")
                             if (compare_arrays(key, last_applied_filter, t)) {
                                 (t[key].length != region.length) ? payload['region'] =   t[key] : null;
+                                    console.log("t.LocalAuthorityLabels.length", t.LocalAuthorityLabels.length)
+                                    console.log("local_authority.length", local_authority.length)
                                 if(t.LocalAuthorityLabels.length == local_authority.length ) {
                                     payload['la_select_status'] = false;
                                     // payload['local_authority_name'] = null;
