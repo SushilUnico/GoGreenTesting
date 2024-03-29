@@ -7006,7 +7006,7 @@
                 setTimeout(()=>{
                         F()
                         console.log("Chart file loaded: calling API's now");
-                        if(window.location.pathname == '/' || window.location.pathname == "/profile-creation") {
+                        if(window.location.pathname == '/' || window.location.pathname == "/profile-creation" ||  window.location.pathname == "/audience-creation") {
                             // document.querySelector('a[wized="profile_filters_reset"]').click();
                         } else {
                             // document.querySelector('.filters_submit-button').click(); // TODO: instead of triggering click event listen an event from wized that filters are loaded
