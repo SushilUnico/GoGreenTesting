@@ -7018,6 +7018,7 @@
                     , 5e3);
                 function F() {
                     let g = t.querySelector(A["chart-toggle"]);
+                        console.log(g);
                     g && q(g, "change", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
