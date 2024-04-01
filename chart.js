@@ -6929,7 +6929,7 @@
                             N.style.borderRadius = "6px",
                             N.style.position = "absolute",
                             N.style.marginTop = "4px";
-                            N.style.zIndex = "auto";
+                            N.style.zIndex = "1";
                         let H = document.createElement("div");
                         return N.style.overflowY = "auto",
                             v.addEventListener("input", w=>{
