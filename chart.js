@@ -7019,13 +7019,16 @@
                 function F() {
                     let g = t.querySelector(A["chart-toggle"]);
                         console.log(g);
+                        console.log(window.location.pathname)
                     g && q(g, "change", ()=>{
                             var w;
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
+                                    console.log(window.location.pathname)
                                     k(!0);
                                     break;
                                 case "By nation":
+                                console.log(window.location.pathname)
                                     k(!1);
                                     break;      
                                 default:
