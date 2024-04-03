@@ -6904,7 +6904,7 @@
                 function C(g) {
                     n.showTooltip.set(!1),
                         f.style.opacity = "0",
-                        Mt(g.target).style("stroke", "none")
+                        Mt(g.target).style("stroke", "black")
                 }
                 function R() {
                     $t(".circ").attr("cx", g=>g.x).attr("cy", g=>g.y)
