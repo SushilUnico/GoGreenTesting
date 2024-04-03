@@ -6840,7 +6840,7 @@
                             v.style.position = "absolute",
                             v.style.top = "80px",
                             v.style.right = "10px",
-                            v.style.zIndex = 10000,
+                            v.style.zIndex = 99,
                             // v.appendChild(_),
                             v.appendChild(aa),
                             v.appendChild(g),
