@@ -7026,10 +7026,11 @@
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
                                     k(!0);
+                                g.click()
                                     break;
                                 case "By nation":
                                     k(!1);
-                                console.log("gggg", k(!1));
+                                 g.click()
                                     break;      
                                 default:
                                         break;
