@@ -7029,6 +7029,7 @@
                                     break;
                                 case "By nation":
                                     k(!1);
+                                console.log("gggg", k(!1));
                                     break;      
                                 default:
                                         break;
