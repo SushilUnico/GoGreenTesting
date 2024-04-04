@@ -6904,6 +6904,7 @@
                 function C(g) {
                     n.showTooltip.set(!1),
                         f.style.opacity = "0",
+                            console.log("target");
                         Mt(g.target).style("stroke", "black")
                 }
                 function R() {
