@@ -6885,7 +6885,7 @@
                 function W(g, _) {
                     n.hoveredAuthority.set(_),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                        Mt(g.target).style("stroke", "");
+                        Mt(g.target).style("stroke", "none");
                     let {clientX: v, clientY: N} = g
                         , H = f.querySelector("#tooltip-title");
                     H && (H.textContent = _.local_authority || "");
