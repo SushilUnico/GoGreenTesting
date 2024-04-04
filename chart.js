@@ -6864,7 +6864,7 @@
                     n.hoveredAuthority.set(g),
                     n.showTooltip.value || n.showTooltip.set(!0),
                     m.selectAll(".circ").attr("stroke", "black")
-                    let _ = m.selectAll(".circ").filter(z=>z.local_authority === g.local_authority).attr("stroke", "none").attr("stroke-width", 2)
+                    let _ = m.selectAll(".circ").filter(z=>z.local_authority === g.local_authority).attr("stroke", "black").attr("stroke-width", 2)
                         , [v] = [+_.attr("r")]
                         , N = _.node()
                         , H = N == null ? void 0 : N.getBoundingClientRect()
@@ -6885,7 +6885,7 @@
                 function W(g, _) {
                     n.hoveredAuthority.set(_),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                        Mt(g.target).style("stroke", "black");
+                        Mt(g.target).style("stroke", "none");
                     let {clientX: v, clientY: N} = g
                         , H = f.querySelector("#tooltip-title");
                     H && (H.textContent = _.local_authority || "");
