@@ -6885,7 +6885,7 @@
                 function W(g, _) {
                     n.hoveredAuthority.set(_),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                        Mt(g.target).style("stroke", "none");
+                        Mt(g.target).style("stroke", "black");
                     let {clientX: v, clientY: N} = g
                         , H = f.querySelector("#tooltip-title");
                     H && (H.textContent = _.local_authority || "");
@@ -6903,9 +6903,8 @@
                 }
                 function C(g) {
                     n.showTooltip.set(!1),
-                        f.style.opacity = "0",
-                            console.log("target");
-                        Mt(g.target).style("stroke", "black")
+                        f.style.opacity = "0";
+                        Mt(g.target).style("stroke", "none")
                 }
                 function R() {
                     $t(".circ").attr("cx", g=>g.x).attr("cy", g=>g.y)
