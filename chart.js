@@ -6863,7 +6863,7 @@
                 function S(g) {
                     n.hoveredAuthority.set(g),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                    m.selectAll(".circ").attr("stroke", "black")
+                    m.selectAll(".circ").attr("stroke", "none")
                     let _ = m.selectAll(".circ").filter(z=>z.local_authority === g.local_authority).attr("stroke", "black").attr("stroke-width", 2)
                         , [v] = [+_.attr("r")]
                         , N = _.node()
@@ -6885,7 +6885,7 @@
                 function W(g, _) {
                     n.hoveredAuthority.set(_),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                        Mt(g.target).style("stroke", "none");
+                        Mt(g.target).style("stroke", "black");
                     let {clientX: v, clientY: N} = g
                         , H = f.querySelector("#tooltip-title");
                     H && (H.textContent = _.local_authority || "");
