@@ -6751,6 +6751,7 @@
                         // window.onscroll(event) => {g.style.opacity = "0";};
                         window.addEventListener("scroll", (event) => {
                                g.style.opacity = "0";
+                                m.selectAll(".circ").attr("stroke", "none")
                         });  
                         vi.addEventListener("change", (event) => {
                                g.style.opacity = "1";
