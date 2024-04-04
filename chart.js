@@ -6863,7 +6863,7 @@
                 function S(g) {
                     n.hoveredAuthority.set(g),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                        m.selectAll(".circ").attr("stroke", "none");
+                        // m.selectAll(".circ").attr("stroke", "none");
                     let _ = m.selectAll(".circ").filter(z=>z.local_authority === g.local_authority).attr("stroke", "black").attr("stroke-width", 2)
                         , [v] = [+_.attr("r")]
                         , N = _.node()
