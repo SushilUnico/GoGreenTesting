@@ -6863,7 +6863,7 @@
                 function S(g) {
                     n.hoveredAuthority.set(g),
                     n.showTooltip.value || n.showTooltip.set(!0),
-                    m.selectAll(".circ").attr("stroke", "black")
+                    m.selectAll(".circ").attr("stroke", "none")
                     let _ = m.selectAll(".circ").filter(z=>z.local_authority === g.local_authority).attr("stroke", "black").attr("stroke-width", 2)
                         , [v] = [+_.attr("r")]
                         , N = _.node()
@@ -6904,7 +6904,7 @@
                 function C(g) {
                     n.showTooltip.set(!1),
                         f.style.opacity = "0";
-                        // Mt(g.target).style("stroke", "none")
+                        Mt(g.target).style("stroke", "none")
                 }
                 function R() {
                     $t(".circ").attr("cx", g=>g.x).attr("cy", g=>g.y)
