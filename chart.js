@@ -7027,11 +7027,11 @@
                             switch ((w = g.firstChild) == null ? void 0 : w.textContent){
                                 case "By region":
                                     k(!0);
-                                document.getElementsById('w-dropdown-toggle-12').click();
+                                document.getElementById('w-dropdown-toggle-12').click();
                                     break;
                                 case "By nation":
                                     k(!1);
-                                document.getElementsById('w-dropdown-toggle-12').click();
+                                document.getElementById('w-dropdown-toggle-12').click();
                                     break;      
                                 default:
                                         break;
