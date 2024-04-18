@@ -4814,6 +4814,7 @@
                         const income_deprivation_older_to = document.getElementById('income_deprivation_older_to-2');
                         console.log("chart income_deprivation_older_from",income_deprivation_older_from.value, income_deprivation_older_to.value);
                         (income_deprivation_older_from.value == 0 && income_deprivation_older_to.value == 1) ? null :
+                                console.log("checking");
                                 payload['idop_value'] = {
                                     'lower': income_deprivation_older_from.value,
                                     'higher': income_deprivation_older_to.value
