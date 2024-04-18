@@ -4784,17 +4784,18 @@
                             break;
                         case 'Tenure':
                         const tenure = document.querySelectorAll("input[type=checkbox][name=tenure]")
-                                const tmp = {}
-                                t[key].forEach(x => {
-                                    tmp[x] = true
-                                })
-                                if (tmp['unknown']) {
-                                    tmp[''] = true;
-                                } else {
-                                    delete tmp['unknown'];
-                                    delete tmp[''];
-                                }
-                                (t[key].length != tenure.length) ? payload['tenure'] = Object.keys(tmp) : null
+                                // const tmp = {}
+                                // t[key].forEach(x => {
+                                //     tmp[x] = true
+                                // })
+                                // if (tmp['unknown']) {
+                                //     tmp[''] = true;
+                                // } else {
+                                //     delete tmp['unknown'];
+                                //     delete tmp[''];
+                                // }
+                                // (t[key].length != tenure.length) ? payload['tenure'] = Object.keys(tmp) : null
+                                (t[key].length != tenure.length) ? payload['tenure'] = t[key] : null;
                             break;
                         case 'MainsGasFlag':
                         const m_gas = document.querySelectorAll("input[type=checkbox][name=main_gas]");
