@@ -4745,7 +4745,6 @@
                             break;
                         case 'CurrentEnergyRating':
                         const c_energy = document.querySelectorAll("input[type=checkbox][name=current_energy_rating]");
-                                // t[key] = t[key].filter(item => item !== "");
                                 (t[key].length != c_energy.length) ? payload['current_energy_rating'] =  t[key] : null;
                             break;
                         case 'HotWaterEnergyEfficiency':
