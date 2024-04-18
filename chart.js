@@ -4650,7 +4650,7 @@
                     Regions: ["North West", "Yorkshire and The Humber", "West Midlands", "London", "East Midlands", "South West", "East of England", "North East", "South East"],
                     la_select_status: !1,
                     LocalAuthorityLabels: [],
-                    CurrentEnergyRating: ["A", "B", "C", "D", "E", "F", "G", "INVALID"],
+                    CurrentEnergyRating: ["A", "B", "C", "D", "E", "F", "G", ""],
                     FuelPovertyRateLower: 0,
                     FuelPovertyRateUpper: 100,
                     IncomeDeprivationIndex: "Income Deprivation Domain",
