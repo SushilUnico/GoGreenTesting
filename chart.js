@@ -4794,8 +4794,8 @@
                         const income_deprivation_children_to = document.getElementById('income_deprivation_children_to-2');
                         (income_deprivation_children_from.value == 0 && income_deprivation_children_to.value == 1) ? null :
                                 payload['idc_value'] = {
-                                    'lower': t[key],
-                                    'higher': t['IncomeDeprivationRangeChildUpper']
+                                    'lower': income_deprivation_children_from.value,
+                                    'higher': income_deprivation_children_to.value
                                 };
                             break;
                         case 'IncomeDeprivationRangeElderLower':
@@ -4814,8 +4814,8 @@
                         const income_deprivation_domain_to = document.getElementById('income_deprivation_domain_to-2');
                         (income_deprivation_domain_from.value == 0 && income_deprivation_domain_to.value == 1) ? null :
                                 payload['income_deprivation_value'] = {
-                                    'lower': t[key],
-                                    'higher': t['IncomeDeprivationRangeUpper']
+                                    'lower': income_deprivation_domain_from.value,
+                                    'higher': income_deprivation_domain_to.value
                                 };
                             break;
                     }
